@@ -1,0 +1,8 @@
+<div class="playerList" *ngIf="players.length > 0">
+<mat-card *ngFor="let player of players">
+   {{ player.name}}  {{player.position}}  {{player.avgPoints}}
+</mat-card>>
+</div>
+<mat-card *ngIf="players.length <= 0">
+    No Players Added yet
+</mat-card>
