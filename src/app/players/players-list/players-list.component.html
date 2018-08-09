@@ -1,0 +1,17 @@
+<table mat-table [dataSource]="playerBase" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let player"> {{player.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> Position </th>
+        <td mat-cell *matCellDef="let player"> {{player.position}} </td>
+      </ng-container>
+      <ng-container matColumnDef="avgPoints">
+        <th mat-header-cell *matHeaderCellDef> Average Points </th>
+        <td mat-cell *matCellDef="let player"> {{player.avgPoints}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayColums"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayColums;"></tr>
+
+</table>

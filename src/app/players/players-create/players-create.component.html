@@ -1,0 +1,20 @@
+<form (submit)="onPlayerAdd(playerForm)" #playerForm="ngForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Playername</mat-label>
+    <input matInput type="text" ngModel name="nameInput" [ngModelOptions]="{standalone: true}" required>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+      <mat-label> Position</mat-label>
+      <mat-select [(ngModel)]="positionInput"  [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor= "let position of playerPostitions"  [value]="playerPostitions"  >
+            {{position}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+      <mat-label> Average Points</mat-label>
+  <input matInput type="number" [(ngModel)]="avgPointsInput"  [ngModelOptions]="{standalone: true}" required >
+  </mat-form-field>
+<hr>
+<button mat-raised-button type="submit">Save Player </button>
+</form>
